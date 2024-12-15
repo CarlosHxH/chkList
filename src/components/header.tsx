@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Header = async () => {
   const session = await auth();
   const user = session?.user;
-
+  
   const logoutAction = async () => {
     'use server';
     await signOut();
@@ -15,7 +15,7 @@ const Header = async () => {
       <nav className='h-full flex justify-between container items-center'>
         <div>
           <Link href='/' className='text-ct-dark-600 text-2xl font-semibold'>
-            CodevoWeb
+            5sTransportes
           </Link>
         </div>
         <ul className='flex items-center space-x-4'>
@@ -27,14 +27,7 @@ const Header = async () => {
           {!user && (
             <>
               <li>
-                <Link href='/register' className='text-ct-dark-600'>
-                  Register
-                </Link>
-              </li>
-              <li>
-                <Link href='/login' className='text-ct-dark-600'>
-                  Login
-                </Link>
+                <Link href='/login' className='text-ct-dark-600'>Login</Link>
               </li>
             </>
           )}
@@ -49,6 +42,13 @@ const Header = async () => {
                 <Link href='/profile' className='text-ct-dark-600'>
                   Profile
                 </Link>
+              </li>
+              <li className='ml-4'>
+                <Link href='/adicionar' className='text-ct-dark-600'>
+                  Adicionar
+                </Link>
+              </li>
+              <li>
               </li>
               <li className='ml-4'>
                 <button>Logout</button>

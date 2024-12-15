@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import Header from "@/components/header";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+//import { redirect } from "next/navigation";
 
 export default async function ProfilePage() {
   const session = await auth();
