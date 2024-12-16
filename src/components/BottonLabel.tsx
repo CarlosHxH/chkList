@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { ToggleButtonGroup, createTheme, Container, Box, Typography } from '@mui/material';
+import { ToggleButtonGroup, Box, Typography } from '@mui/material';
 import { StyledToggleButton } from '@/components/StyledToggleButton';
 
 interface Props
@@ -18,8 +18,8 @@ const BottonLabel: React.FC<Props> = (props) =>
   const item = (val: any) => <StyledToggleButton key={val} value={val} aria-label={val}>{val}</StyledToggleButton>
 
   return (
-    <Box sx={{display:'flex',mb:2}}>
-      <Typography sx={{mt:'auto',mr:2,alignItems:'center'}}>{props.title}</Typography>
+    <Box sx={{display:'flex',flexDirection:'column',mb:2}}>
+      <Typography variant='h5' sx={{mt:'auto',mr:2, alignItems:'center'}}>{props.title}</Typography>
       <ToggleButtonGroup value={alignment} {...props} exclusive onChange={handleAlignment} aria-label="Toggle">
         {props.values.map(item)}
       </ToggleButtonGroup>
